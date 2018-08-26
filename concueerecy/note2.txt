@@ -2,4 +2,13 @@
 
 1 ReentrantReadWriteLock 读写重入锁
     读读共享，读写互斥，写写互斥
-	
+
+2 threadPoll	
+    2.1 newCachedThreadPool     ------>  SynchronousQueue
+	缓存特性 优点：适合处理高并发情况下，任务执行时间比较短 ；任务耗时短，数量大
+    2.2 newFixedThreadPool      ------>  LinkedBlockingQueue
+	固定的线程数 优点 控制高并发性能 可以调节线程合理使用cpu  
+    2.3 newScheduledThreadPool  ------>  DelayedWorkQueue
+	时间调度特性的线程池,必须初始化核心线程数
+    2.4 newSingleThreadExecutor ----->  LinkedBlockingQueue
+
